@@ -5,14 +5,23 @@
   "scripts": {
     "dev": "vite",
     "lint": "eslint --cache .",
+    "pretty": "eslint --write index.html",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@mui/icons-material": "^5.6.2",
+    "@mui/material": "^5.6.3",
+    "lodash": "^4.17.21",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "tss-react": "^3.6.2"
   },
   "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^3.2.0",
+    "@types/lodash": "^4.14.182",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "@typescript-eslint/eslint-plugin": "^5.21.0",
