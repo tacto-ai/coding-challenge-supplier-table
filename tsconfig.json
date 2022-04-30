@@ -3,7 +3,7 @@
     "target": "ESNext",
     "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "allowJs": false,
+    "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
@@ -17,7 +17,9 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src"
+    ".eslintrc.js",
+    "vite.config.ts",
+    "src",
   ],
   "references": [{ "path": "./tsconfig.node.json"}]
 }
