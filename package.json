@@ -7,7 +7,8 @@
     "lint": "eslint --cache .",
     "pretty": "eslint --write index.html",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "mockdata": "json-server --watch mock-server/data.json -p 3001"
   },
   "dependencies": {
     "@emotion/react": "^11.9.0",
@@ -38,6 +39,7 @@
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-testing-library": "^4.6.0",
+    "json-server": "^0.17.0",
     "prettier": "^2.6.2",
     "typescript": "^4.6.4",
     "vite": "^2.9.5",
