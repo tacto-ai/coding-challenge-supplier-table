@@ -1,0 +1,23 @@
+type: object
+required:
+  - id
+  - first_name
+  - last_name
+  - email
+  - organization_id
+  - department_ids
+properties:
+  id:
+    type: number
+  first_name:
+    type: string
+  last_name:
+    type: string
+  email:
+    type: string
+  organization_id:
+    type: number
+  department_ids:
+    type: array
+    items:
+      type: number

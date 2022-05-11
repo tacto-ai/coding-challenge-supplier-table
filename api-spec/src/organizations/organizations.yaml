@@ -1,0 +1,12 @@
+get:
+  summary: fetches related organizations in the organization
+  operationId: fetchOrganizations
+  responses:
+    '200':
+      description: a list of organizations
+      content:
+        application/json:
+          schema:
+            $ref: schemas/Organizations.yaml
+  tags:
+    - Organizations

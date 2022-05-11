@@ -1,10 +1,10 @@
 {
   "organizations": [
-    {"id": 1, "name":  "SimpleWorks GmbH", "supplier_ids":  [2, 3, 4, 5]},
-    {"id": 2, "name":  "MetalParts AG", "customer_ids":  [1]},
-    {"id": 3, "name":  "Helmke GmbH ", "customer_ids":  [1]},
-    {"id": 4, "name":  "Schirrmeister OHG ", "customer_ids":  [1]},
-    {"id": 5, "name":  "Ziegler AG ", "customer_ids":  [1]}
+    {"id": 1, "name":  "SimpleWorks GmbH", "supplier_ids": [2, 3, 4, 5], "customer_ids": []},
+    {"id": 2, "name":  "MetalParts AG", "customer_ids":  [1], "supplier_ids": []},
+    {"id": 3, "name":  "Helmke GmbH ", "customer_ids":  [1], "supplier_ids": []},
+    {"id": 4, "name":  "Schirrmeister OHG ", "customer_ids":  [1], "supplier_ids": []},
+    {"id": 5, "name":  "Ziegler AG ", "customer_ids":  [1], "supplier_ids": []}
   ],
   "departments": [
     {"id": 1, "name": "Management"},
@@ -23,12 +23,12 @@
     {"id":  8, "first_name": "Cara", "last_name": "Burkhardt", "email": "cara@ziegler.org", "organization_id": 5, "department_ids": [1]}
   ],
   "articles": [
-    {"id": 1, "name":  "Screw 20mm", "supplied_by":  [2]},
-    {"id": 2, "name":  "Pump", "supplied_by":  [2]},
-    {"id": 3, "name":  "Hydraulic tube", "supplied_by":  [2]},
-    {"id": 3, "name":  "sheet metal 100x100mm", "supplied_by":  [2]},
-    {"id": 3, "name":  "chipboard 1200mmx800mm", "supplied_by":  [2]},
-    {"id": 3, "name":  "wiring harness type a4ghj1", "supplied_by":  [2]},
-    {"id": 3, "name":  "electric servo motor", "supplied_by":  [2]}
+    {"id": 1, "name":  "Screw 20mm", "supplied_by":  [4,2]},
+    {"id": 2, "name":  "Pump", "supplied_by":  [2,3]},
+    {"id": 3, "name":  "Hydraulic tube", "supplied_by":  [2,4]},
+    {"id": 3, "name":  "sheet metal 100x100mm", "supplied_by":  [3,4,5]},
+    {"id": 3, "name":  "chipboard 1200mmx800mm", "supplied_by":  [2,3]},
+    {"id": 3, "name":  "wiring harness type a4ghj1", "supplied_by":  [2,3,4,5]},
+    {"id": 3, "name":  "electric servo motor", "supplied_by":  [5,2]}
   ]
 }

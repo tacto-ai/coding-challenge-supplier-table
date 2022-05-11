@@ -1,0 +1,14 @@
+type: object
+required:
+  - id
+  - name
+  - supplied_by
+properties:
+  id:
+    type: number
+  name:
+    type: string
+  supplied_by:
+    type: array
+    items:
+      type: number

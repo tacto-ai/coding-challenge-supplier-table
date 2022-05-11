@@ -1,0 +1,21 @@
+openapi: 3.0.2
+info:
+  title: Tacto Codechallange API
+  version: 1.0.0
+  license:
+    name: private
+    url: https://tacto.ai
+  description: Dummy API
+servers:
+  - description: local
+    url: http://localhost:8000
+paths:
+  /articles:
+    $ref: articles/articles.yaml
+  /departments:
+    $ref: departments/departments.yaml
+  /organizations:
+    $ref: organizations/organizations.yaml
+  /users:
+    $ref: users/users.yaml
+

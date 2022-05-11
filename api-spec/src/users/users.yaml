@@ -1,0 +1,12 @@
+get:
+  summary: fetches the accessible users of organization
+  operationId: fetchUsers
+  responses:
+    '200':
+      description: a list of users
+      content:
+        application/json:
+          schema:
+            $ref: schemas/Users.yaml
+  tags:
+    - Users

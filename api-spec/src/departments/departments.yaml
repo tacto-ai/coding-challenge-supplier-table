@@ -1,0 +1,12 @@
+get:
+  summary: fetches all departments in the organization
+  operationId: fetchDepartments
+  responses:
+    '200':
+      description: a list of departments
+      content:
+        application/json:
+          schema:
+            $ref: schemas/Departments.yaml
+  tags:
+    - Departments

@@ -8,7 +8,13 @@
     "pretty": "eslint --write index.html",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "mockdata": "json-server --watch mock-server/data.json -p 3001"
+    "mockdata": "json-server --watch mock-server/data.json -p 3001",
+    "serve:api": "serve -s api-spec/build -p 8099",
+    "generate:api": "yarn lint:api && yarn build:api && yarn && yarn validate:api",
+    "lint:api": "openapi lint api-spec/src/openapi-spec.yaml",
+    "build:api": "openapi bundle -o api-spec/build/openapi api-spec/src/openapi-spec.yaml",
+    "test:api": "swagger-cli validate api-spec/build/openapi.yaml",
+    "validate:api": "docker run --rm -v $PWD:/local openapitools/openapi-generator-cli:v5.4.0 validate -i /local/api-spec/build/openapi.yaml --recommend"
   },
   "dependencies": {
     "@emotion/react": "^11.9.0",
@@ -21,6 +27,7 @@
     "tss-react": "^3.6.2"
   },
   "devDependencies": {
+    "@redocly/openapi-cli": "^1.0.0-beta.95",
     "@trivago/prettier-plugin-sort-imports": "^3.2.0",
     "@types/lodash": "^4.14.182",
     "@types/react": "^18.0.0",
@@ -41,6 +48,8 @@
     "eslint-plugin-testing-library": "^4.6.0",
     "json-server": "^0.17.0",
     "prettier": "^2.6.2",
+    "serve": "^13.0.2",
+    "swagger-cli": "^4.0.4",
     "typescript": "^4.6.4",
     "vite": "^2.9.5",
     "vite-plugin-eslint": "^1.6.0"

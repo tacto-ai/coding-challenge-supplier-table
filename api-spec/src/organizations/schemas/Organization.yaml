@@ -1,0 +1,19 @@
+type: object
+required:
+  - id
+  - name
+  - supplier_ids
+  - customer_ids
+properties:
+  id:
+    type: number
+  name:
+    type: string
+  supplier_ids:
+    type: array
+    items:
+      type: number
+  customer_ids:
+    type: array
+    items:
+      type: number

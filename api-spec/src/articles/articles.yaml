@@ -1,0 +1,12 @@
+get:
+  summary: fetches all articles in the organization
+  operationId: fetchArticles
+  responses:
+    '200':
+      description: a list of articles
+      content:
+        application/json:
+          schema:
+            $ref: schemas/Articles.yaml
+  tags:
+    - Articles

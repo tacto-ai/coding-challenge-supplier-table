@@ -1,0 +1,151 @@
+openapi: 3.0.2
+info:
+  title: Tacto Codechallange API
+  version: 1.0.0
+  license:
+    name: private
+    url: https://tacto.ai
+  description: Dummy API
+servers:
+  - description: local
+    url: http://localhost:8000
+paths:
+  /articles:
+    get:
+      summary: fetches all articles in the organization
+      operationId: fetchArticles
+      responses:
+        '200':
+          description: a list of articles
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Articles'
+      tags:
+        - Articles
+  /departments:
+    get:
+      summary: fetches all departments in the organization
+      operationId: fetchDepartments
+      responses:
+        '200':
+          description: a list of departments
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Departments'
+      tags:
+        - Departments
+  /organizations:
+    get:
+      summary: fetches related organizations in the organization
+      operationId: fetchOrganizations
+      responses:
+        '200':
+          description: a list of organizations
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Organizations'
+      tags:
+        - Organizations
+  /users:
+    get:
+      summary: fetches the accessible users of organization
+      operationId: fetchUsers
+      responses:
+        '200':
+          description: a list of users
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Users'
+      tags:
+        - Users
+components:
+  schemas:
+    Article:
+      type: object
+      required:
+        - id
+        - name
+        - supplied_by
+      properties:
+        id:
+          type: number
+        name:
+          type: string
+        supplied_by:
+          type: array
+          items:
+            type: number
+    Articles:
+      type: array
+      items:
+        $ref: '#/components/schemas/Article'
+    Department:
+      type: object
+      required:
+        - id
+        - name
+      properties:
+        id:
+          type: number
+        name:
+          type: string
+    Departments:
+      type: array
+      items:
+        $ref: '#/components/schemas/Department'
+    Organization:
+      type: object
+      required:
+        - id
+        - name
+        - supplier_ids
+        - customer_ids
+      properties:
+        id:
+          type: number
+        name:
+          type: string
+        supplier_ids:
+          type: array
+          items:
+            type: number
+        customer_ids:
+          type: array
+          items:
+            type: number
+    Organizations:
+      type: array
+      items:
+        $ref: '#/components/schemas/Organization'
+    User:
+      type: object
+      required:
+        - id
+        - first_name
+        - last_name
+        - email
+        - organization_id
+        - department_ids
+      properties:
+        id:
+          type: number
+        first_name:
+          type: string
+        last_name:
+          type: string
+        email:
+          type: string
+        organization_id:
+          type: number
+        department_ids:
+          type: array
+          items:
+            type: number
+    Users:
+      type: array
+      items:
+        $ref: '#/components/schemas/User'
