@@ -26,9 +26,11 @@
     {"id": 1, "name":  "Screw 20mm", "supplied_by":  [4,2]},
     {"id": 2, "name":  "Pump", "supplied_by":  [2,3]},
     {"id": 3, "name":  "Hydraulic tube", "supplied_by":  [2,4]},
-    {"id": 3, "name":  "sheet metal 100x100mm", "supplied_by":  [3,4,5]},
-    {"id": 3, "name":  "chipboard 1200mmx800mm", "supplied_by":  [2,3]},
-    {"id": 3, "name":  "wiring harness type a4ghj1", "supplied_by":  [2,3,4,5]},
-    {"id": 3, "name":  "electric servo motor", "supplied_by":  [5,2]}
+    {"id": 4, "name":  "sheet metal 100x100mm", "supplied_by":  [3,4,5]},
+    {"id": 5, "name":  "chipboard 1200mmx800mm", "supplied_by":  [2,3]},
+    {"id": 6, "name":  "wiring harness type a4ghj1", "supplied_by":  [2,3,4,5]},
+    {"id": 7, "name":  "electric servo motor", "supplied_by":  [5,2]},
+    {"id": 8, "name":  "Potentiometer", "supplied_by":  [3]},
+    {"id": 9, "name":  "PVC", "supplied_by":  [4]}
   ]
 }
