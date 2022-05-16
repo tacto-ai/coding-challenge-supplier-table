@@ -8,7 +8,7 @@ interface DefaultLayoutProps {
   children: React.ReactNode;
 }
 
-const StyledAppBar = withStyles(AppBar, (theme, props, classes) => ({
+const StyledAppBar = withStyles(AppBar, () => ({
   root: {
     backgroundColor: TactoBrandColors['900'],
   },
