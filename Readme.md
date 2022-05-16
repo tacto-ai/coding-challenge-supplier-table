@@ -27,7 +27,7 @@ In another column, the number of items purchased from this supplier should be di
 is only purchased from this one supplier, a red warning icon should be displayed in another column, which shows on mouse
 hover which article it is (id and name).
 
-![](docs/images/mockup.jpg)
+![](/docs/images/mockup.jpg)
 
 ### Acceptance Criteria
 
