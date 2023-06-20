@@ -18,4 +18,3 @@ paths:
     $ref: organizations/organizations.yaml
   /users:
     $ref: users/users.yaml
-
