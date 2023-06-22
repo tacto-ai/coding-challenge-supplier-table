@@ -24,7 +24,7 @@
     "lodash": "^4.17.21",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "tss-react": "^3.6.2",
+    "tss-react": "^4.8.6",
     "zustand": "^4.0.0-rc.1"
   },
   "devDependencies": {
