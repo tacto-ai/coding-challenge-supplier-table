@@ -1,0 +1,44 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.2.0
+    hooks:
+      - id: trailing-whitespace
+        args: [--markdown-linebreak-ext=md]
+      - id: end-of-file-fixer
+      - id: check-added-large-files
+      - id: check-yaml
+      - id: check-toml
+      - id: check-json
+      - id: debug-statements
+      - id: mixed-line-ending
+        args: [--fix=lf]
+      - id: no-commit-to-branch
+
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v2.6.2
+    hooks:
+      - id: prettier
+        name: prettier-json
+        types: [file]
+        additional_dependencies:
+          - prettier
+          - prettier-plugin-sort-json@0.0.2
+          - '@trivago/prettier-plugin-sort-imports@3.2.0'
+
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.31.1
+    hooks:
+      - id: markdownlint
+        name: markdownlint
+        description: Runs markdownlint on all Markdown files
+        args: [--fix]
+
+  - repo: https://github.com/APIDevTools/swagger-cli
+    rev: v4.0.4
+    hooks:
+      - id: swagger-validation
+        name: swagger-validation:src
+        args: [validate, api-spec/src/openapi-spec.yaml]
+      - id: swagger-validation
+        name: swagger-validation:build
+        args: [validate, api-spec/build/openapi.yaml]
