@@ -4,9 +4,10 @@
 
 To get this challenge working you need to execute first `yarn install` in the
 root directory to install all the dependencies. After that you can use
-`yarn mockdata` which will spin up a server with mock data on `http://localhost:3001`. To
-start the frontend development environment you can use `yarn dev`. That will
-spin up a react frontend application on `http://localhost:3000`.
+`yarn mockdata` which will spin up a server with mock data on
+`http://localhost:3001`. To start the frontend development environment you can
+use `yarn dev`. That will spin up a react frontend application on
+`http://localhost:3000`.
 
 ## Challenge Description
 
@@ -26,8 +27,8 @@ contacts/users we have from that supplier. Unfortunately, your fellow engineer
 did not finish the task, and the number of users always shows as zero. This
 issue should be fixed, and the table should reflect the actual number.
 
-In addition, the table should display the user with the role manager, if such
-a user exists in the data, along with their email and full name. In another
+In addition, the table should display the user with the role manager, if such a
+user exists in the data, along with their email and full name. In another
 column, the number of items purchased from this supplier should be shown. If
 there is an article that is exclusively purchased from this supplier, a red
 warning icon should be displayed in a separate column. Upon hovering the mouse
@@ -57,8 +58,8 @@ changes.
 Please use proper commit messages and divide your task into several useful
 commits, where the commit message documents your decisions made.
 
-Invite the following Tacto employees to your private fork, so that we can
-see your changes:
+Invite the following Tacto employees to your private fork, so that we can see
+your changes:
 
 - [@bentocin](https://github.com/bentocin)
 - [@Linus-Boehm](https://github.com/Linus-Boehm)
