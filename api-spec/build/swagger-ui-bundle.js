@@ -4795,28 +4795,28 @@
             void 0 === e && (e = o.specJson()), void 0 === t && (t = o.url());
             var _ = l.getLineNumberForPath ? l.getLineNumberForPath : function () {},
               x = o.specStr();
-            return u({ fetch: s, spec: e, baseDoc: t, modelPropertyMacro: h, parameterMacro: m, requestInterceptor: g, responseInterceptor: b }).then(function (
-              e
-            ) {
-              var t = e.spec,
-                n = e.errors;
-              if ((a.clear({ type: 'thrown' }), d()(n) && n.length > 0)) {
-                var o = v()(n).call(n, function (e) {
-                  return (
-                    console.error(e),
-                    (e.line = e.fullPath ? _(x, e.fullPath) : null),
-                    (e.path = e.fullPath ? e.fullPath.join('.') : null),
-                    (e.level = 'error'),
-                    (e.type = 'thrown'),
-                    (e.source = 'resolver'),
-                    y()(e, 'message', { enumerable: !0, value: e.message }),
-                    e
-                  );
-                });
-                a.newThrownErrBatch(o);
+            return u({ fetch: s, spec: e, baseDoc: t, modelPropertyMacro: h, parameterMacro: m, requestInterceptor: g, responseInterceptor: b }).then(
+              function (e) {
+                var t = e.spec,
+                  n = e.errors;
+                if ((a.clear({ type: 'thrown' }), d()(n) && n.length > 0)) {
+                  var o = v()(n).call(n, function (e) {
+                    return (
+                      console.error(e),
+                      (e.line = e.fullPath ? _(x, e.fullPath) : null),
+                      (e.path = e.fullPath ? e.fullPath.join('.') : null),
+                      (e.level = 'error'),
+                      (e.type = 'thrown'),
+                      (e.source = 'resolver'),
+                      y()(e, 'message', { enumerable: !0, value: e.message }),
+                      e
+                    );
+                  });
+                  a.newThrownErrBatch(o);
+                }
+                return r.updateResolved(t);
               }
-              return r.updateResolved(t);
-            });
+            );
           };
         },
         Se = [],
