@@ -7,11 +7,16 @@ import { default as React, useEffect } from 'react';
 
 const App: React.FC = () => {
   const rows = useOrganizationTable();
-  const { fetchOrganizations } = useStore(({ fetchOrganizations }) => ({ fetchOrganizations }));
+  const { fetchOrganizations, fetchUsers, fetchDepartments, fetchArticles } = useStore(
+    ({ fetchOrganizations, fetchUsers, fetchDepartments, fetchArticles }) => ({ fetchOrganizations, fetchUsers, fetchDepartments, fetchArticles })
+  );
 
   useEffect(() => {
     ApiHandler.init();
     fetchOrganizations();
+    fetchUsers();
+    fetchDepartments();
+    fetchArticles();
   }, []);
 
   return (
