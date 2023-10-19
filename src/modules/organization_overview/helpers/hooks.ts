@@ -1,4 +1,5 @@
 import { Organization, User, Article } from '@/api';
+import { findContactPerson, findInRiskArticles, findSupplierArticles } from '@/modules/organization_overview/helpers/utils';
 import { useStore } from '@/store';
 import { useGetDepartmentByName } from '@/store/departments/hooks';
 import { useOrganizations } from '@/store/organizations/hooks';
@@ -18,11 +19,15 @@ export const useOrganizationTable = (): Array<OrganizationTableRow> => {
   const userOrgDict = useUsersGroupedByOrganizations();
   const contactDepartment = useGetDepartmentByName('Management');
 
-  return organizations.map((organization) => ({
-    ...organization,
-    numberOfUsers: userOrgDict[organization.id]?.length || 0,
-    contactPerson: (userOrgDict[organization.id] || []).find((user) => contactDepartment && user.departmentIds.includes(contactDepartment.id)),
-    articleCount: Object.values(articleDict).filter((article) => article.suppliedBy.includes(organization.id)).length,
-    inRiskArticles: Object.values(articleDict).filter((article) => article.suppliedBy.length === 1 && article.suppliedBy[0] === organization.id),
-  }));
+  return organizations.map((organization) => {
+    const supplierArticles = findSupplierArticles(Object.values(articleDict), organization.id);
+
+    return {
+      ...organization,
+      numberOfUsers: userOrgDict[organization.id]?.length || 0,
+      contactPerson: contactDepartment && findContactPerson(userOrgDict[organization.id] || [], contactDepartment),
+      articleCount: supplierArticles.length,
+      inRiskArticles: findInRiskArticles(supplierArticles),
+    };
+  });
 };
